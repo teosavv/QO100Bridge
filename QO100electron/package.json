@@ -1,0 +1,28 @@
+{
+  "name": "electron-quick-start",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^9.4.4",
+    "electron-rebuild": "^3.2.5"
+  },
+  "dependencies": {
+    "ngstorage": "^0.3.11",
+    "node-gyp": "^8.4.1",
+    "serialport": "^9.2.8"
+  }
+}

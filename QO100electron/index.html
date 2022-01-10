@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <div ng-app="QO100" ng-controller="mainController" ng-cloack>
+      <h2 style="text-align: center;">TS-2000 Emulation</h1>
+      <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3>OmniRig connection</h3>
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3 col-6">
+                            <span class="input-group-text" id="basic-addon1">IP</span>
+                            <input type="text" class="form-control" placeholder="IP" aria-label="IP" ng-model="config.omniconn.ip" >
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3 col-6">
+                            <span class="input-group-text" id="basic-addon1">Port</span>
+                            <input type="text" class="form-control" placeholder="Port" aria-label="Port" ng-model="config.omniconn.port" >
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn col-12 {{omnistatec[omnistate].class}}" ng-click="omnicon()" >{{omnistatec[omnistate].text}}</button>
+                
+            </div>
+            <div class="col-12">
+                <h3>SDRAngel connection</h3>
+                <button type="button" class="btn col-12 {{omnistatec[sdrastate].class}}" ng-click="sdraconnect()">{{omnistatec[sdrastate].text}}</button>
+            </div>
+            <div class="col-12">
+              <h3>COM PTT connection</h3>
+              <div class="row">
+                <div class="col-4">
+                  <select class="form-control " ng-model="config.comselected" ng-options="o as o for o in comports"></select>
+                </div>
+                <div class="col-5">
+                  <button type="button" class="btn col-12 {{omnistatec[comstate].class}}" ng-click="pttcon()" id="pttcon" >{{omnistatec[comstate].text}}</button>
+                </div>
+                <div class="col-3">
+                  <button type="button" class="btn col-12 {{pttstatec[pttstate].class}}" ng-click="manualptt()" >PTT</button>
+                </div>
+                  
+                  
+                  
+                
+              </div>
+          </div>
+          
+          <hr style="margin-top: 10px;" />
+          <div class="col-12">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" ng-model="config.autostart">
+              <label class="form-check-label" for="exampleCheck1">Auto connect at startup</label>
+            </div>
+          </div>
+
+        </div>
+    </div>
+    </div>
+    <!-- You can also require other files to run in this process -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="node_modules/ngstorage/ngstorage.js"></script>
+    <script src="./renderer.js"></script>
+    
+    
+    <script src="js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
