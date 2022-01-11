@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "QO100Bridge-SV2SQM",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A software to bridge SDRconsole-SDRangel-with-com-ptt",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
@@ -14,15 +14,28 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "SV2SQM",
   "devDependencies": {
-    "electron": "^9.4.4",
-    "electron-rebuild": "^3.2.5"
+    "electron": "^9.4.4"
   },
   "dependencies": {
-    "ngstorage": "^0.3.11",
     "node-gyp": "^8.4.1",
-    "serialport": "^9.2.8"
+    "serialport": "^10.0.0"
+  },
+  "build": {
+    "productName": "QO100Bridge-SV2SQM",
+    "appId": "SV2SQM.QO100Bridge",
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "QO100BridgeSV2SQM.exe"
+    },
+    "directories": {
+      "output": "output",
+      "buildResources": "buildResources"
+    }
   }
 }
